@@ -22,13 +22,35 @@ public class Ch04LinkedList {
     // 연결 정보를 찾는 시간이 필요하므로 접근 속도가 느림
     // 중간 데이터 삭제시, 앞뒤 데이터의 연결을 재구성해야 하는 부가적인 작업 필요
     public static void main(String[] args) {
+        // 1. 링크드 리스트 선언 및 print
         SingleLinkedList<String> pcyLinkedList = new SingleLinkedList<String>();
         pcyLinkedList.addNode("1");
         pcyLinkedList.addNode("2");
         pcyLinkedList.addNode("3");
-
         pcyLinkedList.printAll();
 
+        // 2. 링크드 리스트 선언 및 print, 중간에 선언
+        SingleLinkedList<String> pcyLinkedList1 = new SingleLinkedList<String>();
+        pcyLinkedList1.addNode("1");
+        pcyLinkedList1.addNode("2");
+        pcyLinkedList1.addNode("3");
+
+        pcyLinkedList1.printAll();
+
+        pcyLinkedList1.addNodeInside("5", "1");
+        pcyLinkedList1.printAll();
+        pcyLinkedList1.addNodeInside("7", "20");
+        pcyLinkedList1.printAll();
+
+        // 2. 링크드 리스트 선언 및 print, 삭제
+        SingleLinkedList<Integer> pcyLinkedList2 = new SingleLinkedList<Integer>();
+        pcyLinkedList2.addNode(1);
+        pcyLinkedList2.addNode(2);
+        pcyLinkedList2.addNode(3);
+
+        pcyLinkedList2.printAll();
+        System.out.println(pcyLinkedList2.delNode(1));
+        pcyLinkedList2.printAll();
     }
 
 }
