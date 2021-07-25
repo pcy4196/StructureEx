@@ -1,5 +1,6 @@
 package com.example.structure;
 
+import com.example.util.DoubleLinkedList;
 import com.example.util.SingleLinkedList;
 
 public class Ch04LinkedList {
@@ -36,11 +37,15 @@ public class Ch04LinkedList {
         pcyLinkedList1.addNode("3");
 
         pcyLinkedList1.printAll();
+        System.out.println("-------------------------------------");
 
         pcyLinkedList1.addNodeInside("5", "1");
         pcyLinkedList1.printAll();
+        System.out.println("-------------------------------------");
+
         pcyLinkedList1.addNodeInside("7", "20");
         pcyLinkedList1.printAll();
+        System.out.println("-------------------------------------");
 
         // 2. 링크드 리스트 선언 및 print, 삭제
         SingleLinkedList<Integer> pcyLinkedList2 = new SingleLinkedList<Integer>();
@@ -49,8 +54,41 @@ public class Ch04LinkedList {
         pcyLinkedList2.addNode(3);
 
         pcyLinkedList2.printAll();
+        System.out.println("-------------------------------------");
+
         System.out.println(pcyLinkedList2.delNode(1));
         pcyLinkedList2.printAll();
+        System.out.println("-------------------------------------");
+
+        // 다양한 링크드 리스트 구조: 더블 링크드 리스트(Doubly linked list)
+        // 더블 링크드 리스트(Doubly linked list) 기본 구조
+        // - 이중 연결 리스트라고도 함
+        // - 장점: 양방향으로 연결되어 있어서 노드 탐색이 양쪽으로 모두 가능
+        DoubleLinkedList<Integer> doubleLinkedList = new DoubleLinkedList<Integer>();
+        doubleLinkedList.addNode(2);
+        doubleLinkedList.addNode(3);
+        doubleLinkedList.addNode(4);
+        doubleLinkedList.addNode(5);
+        doubleLinkedList.addNode(6);
+        doubleLinkedList.printAll();
+
+        System.out.println("-------------------------------------");
+        System.out.println("searchFromHead : " + doubleLinkedList.searchFromHead(2));
+        System.out.println("searchFromTail : " + doubleLinkedList.searchFromTail(3));
+        System.out.println("searchFromHead : " + doubleLinkedList.searchFromHead(7));
+
+        // - 데이터를 임의 노드 앞에 노드를 추가하는 메서드 추가하기
+        System.out.println("-------------------------------------");
+        doubleLinkedList.insertToFront(3, 1);
+        doubleLinkedList.printAll();
+
+        System.out.println("-------------------------------------");
+        doubleLinkedList.insertToFront(4, 0);
+        doubleLinkedList.printAll();
+
+        System.out.println("-------------------------------------");
+        doubleLinkedList.addNode(8);
+        doubleLinkedList.printAll();
     }
 
 }
